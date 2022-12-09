@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: netcheck
+  name: netcheck
+spec:
+  selector:
+    matchLabels:
+      app: netcheck
+  template:
+    metadata:
+      labels:
+        app: netcheck
+      name: netcheck
+    spec:
+      containers:
+      - image: yesa/netcheck:latest
+        name: netcheck
